@@ -20,9 +20,26 @@ namespace ProjInda_Recipe_Manager
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        private Window1 newWindow;
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void TestButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (newWindow == null)
+            {
+                newWindow = new Window1();
+                newWindow.Closed += Window1_Closed;
+                newWindow.Show();
+            }
+        }
+
+        private void Window1_Closed(object? sender, EventArgs e)
+        {
+            newWindow = null;
         }
     }
 }
