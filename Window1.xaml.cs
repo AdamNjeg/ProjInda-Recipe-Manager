@@ -19,7 +19,8 @@ namespace ProjInda_Recipe_Manager
     /// </summary>
     public partial class Window1 : Window
     {
-        private Recipe recipe;
+        public Recipe recipe;
+
 
         public Window1()
         {   
@@ -56,9 +57,13 @@ namespace ProjInda_Recipe_Manager
             }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void SaveRecipe_btn_Click(object sender, RoutedEventArgs e)
         {
+            recipe.Name = recipeName_txtBox.Text;
+            recipe.Instructions = instructions_textbox.Text;
+            this.DialogResult = true;
 
+            this.Close();
         }
     }
 }

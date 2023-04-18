@@ -20,28 +20,30 @@ namespace ProjInda_Recipe_Manager
     /// </summary>
     public partial class MainWindow : Window
     {
-        public List<Recipe> MyRecipes { get; set; }
+        public List<Recipe> myRecipes { get; set; }
         public Window1 newWindow;
-        
+        public Recipe newRecipe { get; set; }
+
         public MainWindow()
         {
-
+            myRecipes = new List<Recipe>();
             InitializeComponent();
         }
 
         private void TestButton_Click(object sender, RoutedEventArgs e)
         {
-            if (newWindow == null)
-            {
-                newWindow = new Window1();
-                newWindow.Closed += Window1_Closed;
-                newWindow.Show();
+            
+            Window1 addRecipeWindow = new Window1();
+            if (addRecipeWindow.ShowDialog() == true)
+            {   
+                newRecipe = new Recipe
+                {
+                    Name = addRecipeWindow.recipe.Name,
+                    Instructions = addRecipeWindow.recipe.Instructions,
+                    Ingredients = addRecipeWindow.recipe.Ingredients
+                };
+                myRecipes.Add(newRecipe);
             }
-        }
-
-        private void Window1_Closed(object? sender, EventArgs e)
-        {
-            newWindow = null;
         }
     }
 }
