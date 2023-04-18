@@ -20,11 +20,12 @@ namespace ProjInda_Recipe_Manager
     /// </summary>
     public partial class MainWindow : Window
     {
-
+        public List<Recipe> MyRecipes { get; set; }
         public Window1 newWindow;
         
         public MainWindow()
         {
+
             InitializeComponent();
         }
 

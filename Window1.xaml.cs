@@ -55,5 +55,10 @@ namespace ProjInda_Recipe_Manager
 
             }
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
