@@ -21,7 +21,8 @@ namespace ProjInda_Recipe_Manager
     public partial class MainWindow : Window
     {
 
-        private Window1 newWindow;
+        public Window1 newWindow;
+        
         public MainWindow()
         {
             InitializeComponent();

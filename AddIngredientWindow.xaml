@@ -12,9 +12,12 @@
             <TextBox x:Name="txtName" />
             <Label>Ingredient Amount:</Label>
             <TextBox x:Name="txtAmount" />
+            <Label>Unit</Label>
+            <TextBox x:Name="txtUnit"/>
             <StackPanel Orientation="Horizontal">
                 <Button x:Name="btnOK" Content="OK" Click="btnOK_Click" />
                 <Button x:Name="btnCancel" Content="Cancel" Click="btnCancel_Click" />
+                
             </StackPanel>
         </StackPanel>
     </Grid>

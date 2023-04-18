@@ -22,7 +22,7 @@ namespace ProjInda_Recipe_Manager
         private Recipe recipe;
 
         public Window1()
-        {
+        {   
             InitializeComponent();
             recipe = new Recipe();
             this.DataContext = recipe;
@@ -31,25 +31,33 @@ namespace ProjInda_Recipe_Manager
         private void btnAddIngredient_Click(object sender, RoutedEventArgs e)
         {
             AddIngredientWindow addIngredientWindow = new AddIngredientWindow();
-            addIngredientWindow.Show();
             if (addIngredientWindow.ShowDialog() == true)
             {
                 Ingredient ingredient = new Ingredient
                 {
-                    ingredientName = addIngredientWindow.IngredientName,
-                    Amount = addIngredientWindow.IngredientAmount
+                    IngredientName = addIngredientWindow.IngredientName,
+                    Amount = addIngredientWindow.IngredientAmount,
+                    Unit = addIngredientWindow.IngredientUnit
                 };
                 recipe.Ingredients.Add(ingredient);
+                IngredientsList.Items.Clear();
+                foreach (var thing in recipe.Ingredients)
+                {
+                    IngredientsList.Items.Add(thing.IngredientName + " " +thing.Amount + thing.Unit);
+                }
+                
+                IngredientsList.Items.Refresh();
             }
+
         }
 
         private void btnRemoveIngredient_Click(object sender, RoutedEventArgs e)
         {
-            if (Ingredients.SelectedItem != null)
+            if (IngredientsList.SelectedItem != null)
             {
-                recipe.Ingredients.Remove((Ingredient)Ingredients.SelectedItem);
+                recipe.Ingredients.Remove((Ingredient)IngredientsList.SelectedItem);
+                IngredientsList.Items.Refresh();
             }
         }
-
     }
 }

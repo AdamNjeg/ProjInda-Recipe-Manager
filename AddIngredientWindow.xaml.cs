@@ -26,10 +26,12 @@ namespace ProjInda_Recipe_Manager
         }
         public string IngredientName { get; set; }
         public decimal IngredientAmount { get; set; }
+        public string IngredientUnit { get; set; }
         private void btnOK_Click(object sender, RoutedEventArgs e)
         {
             IngredientName = txtName.Text;
             IngredientAmount = decimal.Parse(txtAmount.Text);
+            IngredientUnit = txtUnit.Text;
             this.DialogResult = true;
             this.Close();
         }
