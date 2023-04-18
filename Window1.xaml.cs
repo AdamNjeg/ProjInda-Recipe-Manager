@@ -19,9 +19,37 @@ namespace ProjInda_Recipe_Manager
     /// </summary>
     public partial class Window1 : Window
     {
+        private Recipe recipe;
+
         public Window1()
         {
             InitializeComponent();
+            recipe = new Recipe();
+            this.DataContext = recipe;
         }
+
+        private void btnAddIngredient_Click(object sender, RoutedEventArgs e)
+        {
+            AddIngredientWindow addIngredientWindow = new AddIngredientWindow();
+            addIngredientWindow.Show();
+            if (addIngredientWindow.ShowDialog() == true)
+            {
+                Ingredient ingredient = new Ingredient
+                {
+                    ingredientName = addIngredientWindow.IngredientName,
+                    Amount = addIngredientWindow.IngredientAmount
+                };
+                recipe.Ingredients.Add(ingredient);
+            }
+        }
+
+        private void btnRemoveIngredient_Click(object sender, RoutedEventArgs e)
+        {
+            if (Ingredients.SelectedItem != null)
+            {
+                recipe.Ingredients.Remove((Ingredient)Ingredients.SelectedItem);
+            }
+        }
+
     }
 }

@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjInda Recipe Manager", "ProjInda Recipe Manager.csproj", "{B000BD84-75E1-4CBF-B150-1C95B6EFDB54}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjInda Recipe Manager", "ProjInda Recipe Manager.csproj", "{B000BD84-75E1-4CBF-B150-1C95B6EFDB54}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{067ECFDE-6768-488C-9804-2740B366E787}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
