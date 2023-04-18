@@ -40,23 +40,19 @@ namespace ProjInda_Recipe_Manager
                     Unit = addIngredientWindow.IngredientUnit
                 };
                 recipe.Ingredients.Add(ingredient);
-                IngredientsList.Items.Clear();
-                foreach (var thing in recipe.Ingredients)
-                {
-                    IngredientsList.Items.Add(thing.IngredientName + " " +thing.Amount + thing.Unit);
-                }
-                
-                IngredientsList.Items.Refresh();
+                IngredientsList.Items.Add(ingredient);
             }
 
         }
 
-        private void btnRemoveIngredient_Click(object sender, RoutedEventArgs e)
+        private void btnRemoveIngredient_Click_1(object sender, RoutedEventArgs e)
         {
-            if (IngredientsList.SelectedItem != null)
+            Ingredient? selectedIngredient = IngredientsList.SelectedItem as Ingredient;
+            if (selectedIngredient != null)
             {
-                recipe.Ingredients.Remove((Ingredient)IngredientsList.SelectedItem);
-                IngredientsList.Items.Refresh();
+                recipe.Ingredients.Remove(selectedIngredient);
+                IngredientsList.Items.Remove(selectedIngredient);
+
             }
         }
     }

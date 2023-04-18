@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Xml.Linq;
 
 public class Ingredient : INotifyPropertyChanged
 {
@@ -7,6 +8,10 @@ public class Ingredient : INotifyPropertyChanged
     private decimal _amount;
     private string unit;
 
+    public override string ToString()
+    {
+        return $"{_ingredientName} - {_amount} {unit}";
+    }
     public string IngredientName
     {
         get { return _ingredientName; }
