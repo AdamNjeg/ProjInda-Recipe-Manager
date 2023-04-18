@@ -19,7 +19,7 @@ namespace ProjInda_Recipe_Manager
     /// </summary>
     public partial class Window1 : Window
     {
-        public Recipe recipe;
+        public Recipe recipe {get; set;}
 
 
         public Window1()
