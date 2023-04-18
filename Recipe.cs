@@ -7,6 +7,11 @@ public class Recipe
     public string Instructions { get; set; }
     public List<Ingredient> Ingredients { get; set; }
 
+    public override string ToString()
+    {
+        return $"{Name}";
+    }
+
     public Recipe()
     {
         Ingredients = new List<Ingredient>();

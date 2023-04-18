@@ -28,6 +28,8 @@ namespace ProjInda_Recipe_Manager
         {
             myRecipes = new List<Recipe>();
             InitializeComponent();
+            RecipeListbox.ItemsSource = myRecipes;
+
         }
 
         private void TestButton_Click(object sender, RoutedEventArgs e)
@@ -43,6 +45,7 @@ namespace ProjInda_Recipe_Manager
                     Ingredients = addRecipeWindow.recipe.Ingredients
                 };
                 myRecipes.Add(newRecipe);
+                RecipeListbox.Items.Refresh();
             }
         }
     }

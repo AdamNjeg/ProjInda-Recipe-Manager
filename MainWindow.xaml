@@ -8,6 +8,7 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Button x:Name="TestButton" Content="Button" HorizontalAlignment="Left" Margin="244,190,0,0" VerticalAlignment="Top" Height="62" Width="213" Click="TestButton_Click"/>
+        <ListBox x:Name="RecipeListbox" HorizontalAlignment="Left" Height="265" Margin="569,73,0,0" VerticalAlignment="Top" Width="153" d:ItemsSource="{d:SampleData ItemCount=5}"/>
 
     </Grid>
 </Window>
