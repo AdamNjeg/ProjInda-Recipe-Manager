@@ -5,9 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjInda_Recipe_Manager"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Button x:Name="TestButton" Content="Button" HorizontalAlignment="Left" Margin="244,190,0,0" VerticalAlignment="Top" Height="62" Width="213" Click="TestButton_Click"/>
+        Title="Recipoo" Height="450" Width="800">
+	<Grid Background="#FFCAD3F1">
+		<Button x:Name="TestButton" FontFamily="Brush Script MT" FontSize ="30" Content="Add Recipe" HorizontalAlignment="Center" Margin="0,286,0,0" VerticalAlignment="Top" Height="87" Width="284" Click="TestButton_Click">
+			<Button.Style>
+				<Style TargetType="Button">
+					<Setter Property="Background" Value="#FF97ACF2"/>
+					<Setter Property="Foreground" Value="#FF2F3E7C"/>
+					<Setter Property="BorderBrush" Value="#00000000"/>
+					<Setter Property="Template">
+						<Setter.Value>
+							<ControlTemplate TargetType="Button">
+								<Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="5">
+									<ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+								</Border>
+							</ControlTemplate>
+						</Setter.Value>
+					</Setter>
+				</Style>
+			</Button.Style>
+		</Button>
+		<Label Content="Welcome to" FontFamily="Ink Free" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" Height="83" Margin="0,25,0,0" VerticalAlignment="Top" Width="236" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="#FF446D9F"/>
+		<Label Content="Recipoo" FontFamily="Brush Script MT" FontSize="100" FontWeight="Bold" HorizontalAlignment="Center" Height="129" Margin="0,88,0,0" VerticalAlignment="Top" Width="382" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="#FF446D9F"/>
+		<Label Content="Your favourite but pretty shitty Recipe Manager" FontFamily="Ink Free" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#FF446D9F" Margin="0,217,0,0"/>
 
-    </Grid>
+	</Grid>
 </Window>
