@@ -7,7 +7,8 @@
         mc:Ignorable="d"
         Title="Recipoo" Height="450" Width="800">
 	<Grid Background="#FFCAD3F1">
-		<Button x:Name="TestButton" FontFamily="Brush Script MT" FontSize ="30" Content="Add Recipe" HorizontalAlignment="Center" Margin="0,286,0,0" VerticalAlignment="Top" Height="87" Width="284" Click="TestButton_Click">
+        <Image Source="/Images/iStock-1155240408.jpg" Opacity="0.2" Margin="-138,-82,-132,-69"/>
+		<Button x:Name="TestButton" FontFamily="Brush Script MT" FontSize="30" Content="Add Recipe" HorizontalAlignment="Center" Margin="0,286,0,0" VerticalAlignment="Top" Height="87" Width="284" Click="TestButton_Click">
 			<Button.Style>
 				<Style TargetType="Button">
 					<Setter Property="Background" Value="#FF97ACF2"/>
@@ -22,9 +23,32 @@
 							</ControlTemplate>
 						</Setter.Value>
 					</Setter>
+					<Style.Triggers>
+						<Trigger Property="IsMouseOver" Value="True">
+							<Trigger.EnterActions>
+								<BeginStoryboard>
+									<Storyboard>
+										<ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+														To="#FFC3D8FF" Duration="0:0:0.3"/>
+										<!-- Change to a lighter background color on hover -->
+									</Storyboard>
+								</BeginStoryboard>
+							</Trigger.EnterActions>
+							<Trigger.ExitActions>
+								<BeginStoryboard>
+									<Storyboard>
+										<ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+														To="#FF97ACF2" Duration="0:0:0.3"/>
+										<!-- Change back to the original background color on hover exit -->
+									</Storyboard>
+								</BeginStoryboard>
+							</Trigger.ExitActions>
+						</Trigger>
+					</Style.Triggers>
 				</Style>
 			</Button.Style>
 		</Button>
+
 		<Label Content="Welcome to" FontFamily="Ink Free" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" Height="83" Margin="0,25,0,0" VerticalAlignment="Top" Width="236" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="#FF446D9F"/>
 		<Label Content="Recipoo" FontFamily="Brush Script MT" FontSize="100" FontWeight="Bold" HorizontalAlignment="Center" Height="129" Margin="0,88,0,0" VerticalAlignment="Top" Width="382" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="#FF446D9F"/>
 		<Label Content="Your favourite but pretty shitty Recipe Manager" FontFamily="Ink Free" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#FF446D9F" Margin="0,217,0,0"/>

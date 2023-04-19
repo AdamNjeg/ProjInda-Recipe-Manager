@@ -8,4 +8,12 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Images\iStock-1155240408.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\iStock-1155240408.jpg" />
+  </ItemGroup>
+
 </Project>
