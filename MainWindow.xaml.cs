@@ -27,7 +27,8 @@ namespace ProjInda_Recipe_Manager
 
         public MainWindow()
         {
-            myRecipes = new List<Recipe>();
+            RecipeManager theRecipeManager = new RecipeManager();
+            myRecipes = theRecipeManager.GetAllRecipes();
             InitializeComponent();
             RecipeListbox.ItemsSource = myRecipes;
 

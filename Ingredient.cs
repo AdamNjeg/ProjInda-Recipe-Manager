@@ -4,6 +4,7 @@ using System.Xml.Linq;
 
 public class Ingredient : INotifyPropertyChanged
 {
+    public int? IngredientId { get; set; }
     private string _ingredientName;
     private decimal _amount;
     private string unit;
