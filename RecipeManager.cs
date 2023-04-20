@@ -20,8 +20,8 @@ namespace ProjInda_Recipe_Manager
                 // Perform CRUD operations using the connection
 
                 string recipeSql = "INSERT INTO Recipes (Name, Instructions) VALUES (@recipeName, @instructions)";
-                string ingredientSql = "INSERT INTO Ingredients (Name, Amount, Unit) VALUES (@ingredientName, @amount, @unit)";
-                string recipeIngredientSql = "INSERT INTO RecipeIngredients (RecipeId, IngredientId) VALUES (@recipeId, @ingredientId)";
+                string ingredientSql = "INSERT INTO Ingredients (Name, Amount, Unit, RecipeID) VALUES (@ingredientName, @amount, @unit, @recipeID)";
+                
 
                 // Create a new SQLite command for inserting Recipe data
                 using (SQLiteCommand recipeCommand = new SQLiteCommand(recipeSql, connection))
@@ -46,23 +46,11 @@ namespace ProjInda_Recipe_Manager
                             ingredientCommand.Parameters.AddWithValue("@ingredientName", ingredient.IngredientName); // Replace with the actual IngredientName value
                             ingredientCommand.Parameters.AddWithValue("@amount", ingredient.Amount); // Replace with the actual Amount value
                             ingredientCommand.Parameters.AddWithValue("@unit", ingredient.Unit); // Replace with the actual Unit value
+                            ingredientCommand.Parameters.AddWithValue("@recipeId", recipeId);
 
                             // Execute the Ingredient query
                             ingredientCommand.ExecuteNonQuery();
-
-                            // Get the last inserted row ID (IngredientId)
-                            int ingredientId = (int)connection.LastInsertRowId;
-
-                            // Create a new SQLite command for inserting RecipeIngredient data
-                            using (SQLiteCommand recipeIngredientCommand = new SQLiteCommand(recipeIngredientSql, connection))
-                            {
-                                // Replace the parameters with actual values from the Recipe object and the current Ingredient object
-                                recipeIngredientCommand.Parameters.AddWithValue("@recipeId", recipeId);
-                                recipeIngredientCommand.Parameters.AddWithValue("@ingredientId", ingredientId);
-
-                                // Execute the RecipeIngredient query
-                                recipeIngredientCommand.ExecuteNonQuery();
-                            }
+                            
                         }
                     }
                 }
@@ -95,7 +83,7 @@ namespace ProjInda_Recipe_Manager
                             recipe.Ingredients = new List<Ingredient>();
 
                             // Retrieve ingredients for the current recipe
-                            string selectIngredientsQuery = "SELECT * FROM RecipeIngredient WHERE RecipeId = @RecipeId";
+                            string selectIngredientsQuery = "SELECT * FROM Ingredients WHERE RecipeId = @RecipeId";
                             using (SQLiteCommand ingredientCommand = new SQLiteCommand(selectIngredientsQuery, connection))
                             {
                                 ingredientCommand.Parameters.AddWithValue("@RecipeId", recipe.RecipeId);
@@ -107,11 +95,11 @@ namespace ProjInda_Recipe_Manager
                                         ingredient.IngredientId = Convert.ToInt32(ingredientReader["IngredientId"]);
                                         ingredient.IngredientName = ingredientReader["Name"].ToString();
                                         ingredient.Amount = (decimal)Convert.ToDouble(ingredientReader["Amount"]);
+                                        ingredient.Unit = ingredientReader["Unit"].ToString();
                                         recipe.Ingredients.Add(ingredient);
                                     }
                                 }
                             }
-
                             recipes.Add(recipe);
                         }
                     }

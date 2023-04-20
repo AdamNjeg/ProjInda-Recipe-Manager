@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Data.SQLite;
+using System.Windows.Navigation;
 
 namespace ProjInda_Recipe_Manager
 {
@@ -32,6 +33,7 @@ namespace ProjInda_Recipe_Manager
             myRecipes = theRecipeManager.GetAllRecipes();
             InitializeComponent();
             RecipeListbox.ItemsSource = myRecipes;
+            this.DataContext = this;
 
         }
 
@@ -50,6 +52,27 @@ namespace ProjInda_Recipe_Manager
                 myRecipes.Add(newRecipe);
                 theRecipeManager.saveRecipe(newRecipe);
                 RecipeListbox.Items.Refresh();
+            }
+        }
+
+        private void viewRecipe_btn_Click(object sender, RoutedEventArgs e)
+        {
+            if(RecipeListbox.SelectedItem != null)
+            {
+                if (RecipeListbox.SelectedItem != null)
+                {
+                    Recipe selectedRecipe = RecipeListbox.SelectedItem as Recipe;
+
+                    // Update the content of the recipe details overlay
+                    
+
+                    // Hide the main window UI and show the recipe details overlay
+                    
+                    MainGrid.Visibility = Visibility.Collapsed;
+                    viewRecipeGrid.Visibility = Visibility.Visible;
+                    MainFrame.Content = new RecipeViewPage();
+
+                }
             }
         }
     }
