@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjInda_Recipe_Manager"
         mc:Ignorable="d"
-        Title="Window1" Height="450" Width="800">
+        Title="New Recipe" Height="450" Width="800">
     <Grid>
         <Label Content="Recipe Name" HorizontalAlignment="Left" Margin="36,8,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="recipeName_txtBox" HorizontalAlignment="Left" Margin="36,39,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="148" Height="20"/>

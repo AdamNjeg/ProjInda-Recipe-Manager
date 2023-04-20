@@ -9,6 +9,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\iStock-1155240408.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\iStock-1155240408.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="System.Data.SQLite" Version="1.0.117" />
   </ItemGroup>
 
