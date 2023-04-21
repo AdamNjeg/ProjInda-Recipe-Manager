@@ -54,23 +54,5 @@ namespace ProjInda_Recipe_Manager
                 RecipeListbox.Items.Refresh();
             }
         }
-
-        private void viewRecipe_btn_Click(object sender, RoutedEventArgs e)
-        {
-            if(RecipeListbox.SelectedItem != null)
-            {
-                if (RecipeListbox.SelectedItem != null)
-                {
-                    Recipe selectedRecipe = RecipeListbox.SelectedItem as Recipe;
-
-                    // Update the content of the recipe details overlay
-                    
-
-                    // Hide the main window UI and show the recipe details overlay
-                    
-
-                }
-            }
-        }
     }
 }
