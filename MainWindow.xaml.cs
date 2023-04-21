@@ -28,8 +28,8 @@ namespace ProjInda_Recipe_Manager
 
         public MainWindow()
         {
-            ((App)Application.Current).theRecipeManager = new RecipeManager();
-            ((App)Application.Current).myRecipes = ((App)Application.Current).theRecipeManager.GetAllRecipes();
+            Global.theRecipeManager = new RecipeManager();
+            Global.myRecipes = Global.theRecipeManager.GetAllRecipes();
             InitializeComponent();
             
             this.DataContext = this;
@@ -48,8 +48,8 @@ namespace ProjInda_Recipe_Manager
                     Instructions = addRecipeWindow.recipe.Instructions,
                     Ingredients = addRecipeWindow.recipe.Ingredients
                 };
-                ((App)Application.Current).myRecipes.Add(newRecipe);
-                ((App)Application.Current).theRecipeManager.saveRecipe(newRecipe);
+                Global.myRecipes.Add(newRecipe);
+                Global.theRecipeManager.saveRecipe(newRecipe);
                 
             }
         }

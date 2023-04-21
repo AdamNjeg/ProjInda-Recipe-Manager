@@ -22,7 +22,9 @@ namespace ProjInda_Recipe_Manager
     {
         public Page1()
         {
+            
             InitializeComponent();
+            RecipeListbox.ItemsSource = Global.myRecipes;
         }
     }
 }
