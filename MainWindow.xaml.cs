@@ -22,17 +22,16 @@ namespace ProjInda_Recipe_Manager
     /// </summary>
     public partial class MainWindow : Window
     {
-        public List<Recipe> myRecipes { get; set; }
+        
         public Window1 newWindow;
-        public Recipe newRecipe { get; set; }
-        public RecipeManager theRecipeManager { get; set; }
+        
 
         public MainWindow()
         {
-            theRecipeManager = new RecipeManager();
-            myRecipes = theRecipeManager.GetAllRecipes();
+            ((App)Application.Current).theRecipeManager = new RecipeManager();
+            ((App)Application.Current).myRecipes = ((App)Application.Current).theRecipeManager.GetAllRecipes();
             InitializeComponent();
-            RecipeListbox.ItemsSource = myRecipes;
+            
             this.DataContext = this;
 
         }
@@ -43,15 +42,15 @@ namespace ProjInda_Recipe_Manager
             Window1 addRecipeWindow = new Window1();
             if (addRecipeWindow.ShowDialog() == true)
             {   
-                newRecipe = new Recipe
+                Recipe newRecipe = new Recipe
                 {
                     Name = addRecipeWindow.recipe.Name,
                     Instructions = addRecipeWindow.recipe.Instructions,
                     Ingredients = addRecipeWindow.recipe.Ingredients
                 };
-                myRecipes.Add(newRecipe);
-                theRecipeManager.saveRecipe(newRecipe);
-                RecipeListbox.Items.Refresh();
+                ((App)Application.Current).myRecipes.Add(newRecipe);
+                ((App)Application.Current).theRecipeManager.saveRecipe(newRecipe);
+                
             }
         }
 

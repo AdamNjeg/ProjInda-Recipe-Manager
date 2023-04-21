@@ -13,5 +13,7 @@ namespace ProjInda_Recipe_Manager
     /// </summary>
     public partial class App : Application
     {
+        public List<Recipe> myRecipes { get; set; }
+        public RecipeManager theRecipeManager { get; set; }
     }
 }
