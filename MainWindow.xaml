@@ -30,7 +30,6 @@
                                     <Storyboard>
                                         <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
 														To="#FFC3D8FF" Duration="0:0:0.3"/>
-                                        <!-- Change to a lighter background color on hover -->
                                     </Storyboard>
                                 </BeginStoryboard>
                             </Trigger.EnterActions>
@@ -39,7 +38,6 @@
                                     <Storyboard>
                                         <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
 														To="#FF97ACF2" Duration="0:0:0.3"/>
-                                        <!-- Change back to the original background color on hover exit -->
                                     </Storyboard>
                                 </BeginStoryboard>
                             </Trigger.ExitActions>
@@ -63,7 +61,6 @@
                         <Storyboard RepeatBehavior="Forever">
                             <DoubleAnimation Storyboard.TargetProperty="(Label.RenderTransform).(TranslateTransform.Y)"
                                      From="0" To="4" Duration="0:0:1" AutoReverse="True"/>
-                            <!-- Adjust the From and To values to control the range of movement -->
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger>
