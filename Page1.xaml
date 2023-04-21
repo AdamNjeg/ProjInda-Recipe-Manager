@@ -1,0 +1,26 @@
+﻿<Page x:Class="ProjInda_Recipe_Manager.Page1"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ProjInda_Recipe_Manager"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Your recipes">
+    <Viewbox Stretch="Fill">
+        <Grid Background="#FFCAD3F1" Width="858">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="49*"/>
+                <RowDefinition Height="270*"/>
+                <RowDefinition Height="146*"/>
+            </Grid.RowDefinitions>
+            <Image Source="/Images/iStock-1155240408.jpg" Opacity="0.2" Margin="0,-46,0,-64" HorizontalAlignment="Center" Width="862" Grid.RowSpan="3"/>
+            <Label Content="Your Recipes" HorizontalAlignment="Center" VerticalAlignment="Top" Height="61" Width="170" Margin="0,10,0,0" FontFamily="Brush Script MT" FontSize="36" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="#FF446D9F">
+                <Label.Effect>
+                    <DropShadowEffect Color="Black" Direction="270" BlurRadius="10" ShadowDepth="5" Opacity="0.5" />
+                </Label.Effect>
+            </Label>
+            <ListBox x:Name="RecipeListbox" HorizontalAlignment="Left" Height="265" Margin="42,100,0,0" VerticalAlignment="Top" Width="153" d:ItemsSource="{d:SampleData ItemCount=5}" Background="#7F71AEDD" FontSize="16" HorizontalContentAlignment="Stretch" Grid.RowSpan="3"/>
+        </Grid>
+    </Viewbox>
+</Page>

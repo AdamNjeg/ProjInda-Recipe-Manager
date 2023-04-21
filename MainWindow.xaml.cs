@@ -54,5 +54,11 @@ namespace ProjInda_Recipe_Manager
                 RecipeListbox.Items.Refresh();
             }
         }
+
+        private void ViewRecipes_Click(object sender, RoutedEventArgs e)
+        {
+            Page1 viewrecipe = new Page1();
+            this.Content = viewrecipe;
+        }
     }
 }
