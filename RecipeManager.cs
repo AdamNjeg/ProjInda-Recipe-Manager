@@ -11,6 +11,8 @@ namespace ProjInda_Recipe_Manager
     {
         // Connection string for your SQLite database
         private string connectionString = @"Data Source=TheDataBase.db;Version=3;";
+
+        //Saves a recipe in the database 
         public void saveRecipe(Recipe newRecipe)
         {
             using (SQLiteConnection connection = new SQLiteConnection(connectionString))

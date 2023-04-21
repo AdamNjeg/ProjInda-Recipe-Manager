@@ -70,6 +70,6 @@
             </Label.Triggers>
         </Label>
         <Label Content="Your favourite but pretty shitty Recipe Manager" FontFamily="Ink Free" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#FF446D9F" Margin="0,217,0,0"/>
-        <ListBox x:Name="RecipeListbox" HorizontalAlignment="Left" Height="265" Margin="569,73,0,0" VerticalAlignment="Top" Width="153" d:ItemsSource="{d:SampleData ItemCount=5}"/>
+        <ListBox x:Name="RecipeListbox" HorizontalAlignment="Left" Height="265" Margin="595,109,0,0" VerticalAlignment="Top" Width="153" d:ItemsSource="{d:SampleData ItemCount=5}" Background="#7F71AEDD" FontSize="16" HorizontalContentAlignment="Stretch"/>
     </Grid>
 </Window>

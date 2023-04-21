@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Data.SQLite;
-using System.Windows.Navigation;
+
 
 namespace ProjInda_Recipe_Manager
 {
@@ -68,9 +68,6 @@ namespace ProjInda_Recipe_Manager
 
                     // Hide the main window UI and show the recipe details overlay
                     
-                    MainGrid.Visibility = Visibility.Collapsed;
-                    viewRecipeGrid.Visibility = Visibility.Visible;
-                    MainFrame.Content = new RecipeViewPage();
 
                 }
             }
