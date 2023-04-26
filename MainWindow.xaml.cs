@@ -22,42 +22,16 @@ namespace ProjInda_Recipe_Manager
     /// </summary>
     public partial class MainWindow : Window
     {
-        
-        public Window1 newWindow;
-        
-
         public MainWindow()
         {
             Global.theRecipeManager = new RecipeManager();
             Global.myRecipes = Global.theRecipeManager.GetAllRecipes();
             InitializeComponent();
-            
+            startPage StartPage = new startPage();
+            this.Content = StartPage;
             this.DataContext = this;
 
         }
-
-        private void TestButton_Click(object sender, RoutedEventArgs e)
-        {
-            
-            Window1 addRecipeWindow = new Window1();
-            if (addRecipeWindow.ShowDialog() == true)
-            {   
-                Recipe newRecipe = new Recipe
-                {
-                    Name = addRecipeWindow.recipe.Name,
-                    Instructions = addRecipeWindow.recipe.Instructions,
-                    Ingredients = addRecipeWindow.recipe.Ingredients
-                };
-                Global.myRecipes.Add(newRecipe);
-                Global.theRecipeManager.saveRecipe(newRecipe);
-                
-            }
-        }
-
-        private void ViewRecipes_Click(object sender, RoutedEventArgs e)
-        {
-            Page1 viewrecipe = new Page1();
-            this.Content = viewrecipe;
-        }
     }
 }
+        
