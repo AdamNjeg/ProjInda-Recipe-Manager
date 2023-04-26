@@ -5,20 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjInda_Recipe_Manager"
         mc:Ignorable="d"
-        Title="Window2" Height="450" Width="800">
-    <Grid>
-        <StackPanel>
-            <Label>Ingredient Name:</Label>
-            <TextBox x:Name="txtName" />
-            <Label>Ingredient Amount:</Label>
-            <TextBox x:Name="txtAmount" />
-            <Label>Unit</Label>
-            <TextBox x:Name="txtUnit"/>
-            <StackPanel Orientation="Horizontal">
-                <Button x:Name="btnOK" Content="OK" Click="btnOK_Click" />
-                <Button x:Name="btnCancel" Content="Cancel" Click="btnCancel_Click" />
-                
-            </StackPanel>
-        </StackPanel>
-    </Grid>
+        Title="Add Ingredient" Height="246" Width="400">
+    <Viewbox Stretch="Fill">
+        <Grid Background="#FFCAD3F1" Width="858">
+            <Image Source="/Images/iStock-1155240408.jpg" Opacity="0.2" Margin="0,-46,0,-64" HorizontalAlignment="Center" Width="862" Grid.RowSpan="3"/>
+            <Label x:Name="Ingredient_name" Margin="309,59,309,474" FontSize="30" FontFamily="Ink Free">Ingredient Name:</Label>
+            <TextBox x:Name="txtName" Margin="201,120,206,403" />
+            <Label x:Name="Ingredient_amount" Margin="296,204,296,333" FontSize="30" FontFamily="Ink Free">Ingredient Amount:</Label>
+            <TextBox x:Name="txtAmount" Margin="204,263,204,265" />
+            <Label Margin="396,341,396,199" FontSize="30" FontFamily="Ink Free">Unit</Label>
+            <TextBox x:Name="txtUnit" Margin="380,393,381,149"/>
+
+            <Button x:Name="btnOK" Content="OK" Click="btnOK_Click" Margin="354,486,432,50" />
+            <Button x:Name="btnCancel" Content="Cancel" Click="btnCancel_Click" Margin="435,486,355,50" />
+        </Grid>
+    </Viewbox>
 </Window>

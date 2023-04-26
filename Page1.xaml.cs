@@ -31,6 +31,7 @@ namespace ProjInda_Recipe_Manager
         {
             Recipe chosenRecipe = RecipeListbox.SelectedItem as Recipe;
             titleBox.Content = chosenRecipe.Name;
+            Instructions.Content = chosenRecipe.Instructions;
 
             StringBuilder ingredientsText = new StringBuilder();
             foreach (var ingredient in chosenRecipe.Ingredients)

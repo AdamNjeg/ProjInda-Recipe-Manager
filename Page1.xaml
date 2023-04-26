@@ -21,7 +21,7 @@
                 </Label.Effect>
             </Label>
             <ListBox x:Name="RecipeListbox" HorizontalAlignment="Left" Height="265" Margin="42,87,0,0" VerticalAlignment="Top" Width="154" d:ItemsSource="{d:SampleData ItemCount=5}" Background="#7FFFFFFF" FontSize="16" HorizontalContentAlignment="Stretch" Grid.RowSpan="3" SelectionChanged="RecipeListbox_SelectionChanged" BorderBrush="#00ABADB3"/>
-            <Button x:Name="BackButton" FontFamily="Brush Script MT" FontSize="20" Content="Back" HorizontalAlignment="Left" Margin="42,252,0,0" VerticalAlignment="Top" Height="30" Width="78" Click="Backbtn_Click" Background="#FF97ACF2" Grid.Row="2">
+            <Button x:Name="BackButton" FontFamily="Brush Script MT" FontSize="20" Content="Back" HorizontalAlignment="Left" Margin="41,255,0,0" VerticalAlignment="Top" Height="30" Width="78" Click="Backbtn_Click" Background="#FF97ACF2" Grid.Row="2">
                 <Button.Style>
                     <Style TargetType="Button">
                         <Setter Property="Background" Value="#FF97ACF2"/>
