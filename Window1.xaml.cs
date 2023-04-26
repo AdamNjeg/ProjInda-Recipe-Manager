@@ -20,11 +20,15 @@ namespace ProjInda_Recipe_Manager
     public partial class Window1 : Window
     {
         public Recipe recipe {get; set;}
+        public static List<int> numbers = new List<int> {1, 2, 3, 4, 5, 6, 7, 8, 9};
+
 
 
         public Window1()
         {   
             InitializeComponent();
+            portionscombobox.SelectedIndex = 0;
+            portionscombobox.ItemsSource = numbers;
             recipe = new Recipe();
             this.DataContext = recipe;
         }
@@ -61,9 +65,15 @@ namespace ProjInda_Recipe_Manager
         {
             recipe.Name = recipeName_txtBox.Text;
             recipe.Instructions = instructions_textbox.Text;
+            recipe.Portions = portionscombobox.SelectedIndex;
             this.DialogResult = true;
 
             this.Close();
+        }
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }
