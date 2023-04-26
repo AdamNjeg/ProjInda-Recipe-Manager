@@ -21,7 +21,7 @@ namespace ProjInda_Recipe_Manager
 
                 // Perform CRUD operations using the connection
 
-                string recipeSql = "INSERT INTO Recipes (Name, Instructions) VALUES (@recipeName, @instructions)";
+                string recipeSql = "INSERT INTO Recipes (Name, Instructions, Portion) VALUES (@recipeName, @instructions @portion)";
                 string ingredientSql = "INSERT INTO Ingredients (Name, Amount, Unit, RecipeID) VALUES (@ingredientName, @amount, @unit, @recipeID)";
                 
 
@@ -31,6 +31,7 @@ namespace ProjInda_Recipe_Manager
                     // Replace the parameters with actual values from the Recipe object
                     recipeCommand.Parameters.AddWithValue("@recipeName", newRecipe.Name); // Replace with the actual RecipeName value
                     recipeCommand.Parameters.AddWithValue("@instructions", newRecipe.Instructions); // Replace with the actual Instructions value
+                    recipeCommand.Parameters.AddWithValue("@portion", newRecipe.Portions); // Replace with the actual Portion value
 
                     // Execute the Recipe query
                     recipeCommand.ExecuteNonQuery();
@@ -82,6 +83,8 @@ namespace ProjInda_Recipe_Manager
                             Recipe recipe = new Recipe();
                             recipe.RecipeId = Convert.ToInt32(reader["RecipeId"]);
                             recipe.Name = reader["Name"].ToString();
+                            recipe.Instructions = reader["Instructions"].ToString();
+                            recipe.Portions = Convert.ToInt32(reader["Portion"]);
                             recipe.Ingredients = new List<Ingredient>();
 
                             // Retrieve ingredients for the current recipe
