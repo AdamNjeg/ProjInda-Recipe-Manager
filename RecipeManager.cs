@@ -82,6 +82,7 @@ namespace ProjInda_Recipe_Manager
                             Recipe recipe = new Recipe();
                             recipe.RecipeId = Convert.ToInt32(reader["RecipeId"]);
                             recipe.Name = reader["Name"].ToString();
+                            recipe.Instructions = reader["Instructions"].ToString();
                             recipe.Ingredients = new List<Ingredient>();
 
                             // Retrieve ingredients for the current recipe
