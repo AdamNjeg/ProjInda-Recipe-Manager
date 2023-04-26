@@ -7,6 +7,7 @@ public class Recipe
     public string Name { get; set; }
     public string Instructions { get; set; }
     public List<Ingredient> Ingredients { get; set; }
+    public int Portions { get; set; }
 
     public override string ToString()
     {
