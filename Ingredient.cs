@@ -2,51 +2,41 @@
 using System.ComponentModel;
 using System.Xml.Linq;
 
-public class Ingredient : INotifyPropertyChanged
+public class Ingredient
 {
     public int? IngredientId { get; set; }
-    private string _ingredientName;
-    private decimal _amount;
+    private string ingredientName;
+    private decimal amount;
     private string unit;
 
     public override string ToString()
     {
-        return $"{_ingredientName} - {_amount} {unit}";
+        return $"{ingredientName} - {amount} {unit}";
     }
     public string IngredientName
     {
-        get { return _ingredientName; }
+        get { return ingredientName; }
         set
         {
-            _ingredientName = value;
-            OnPropertyChanged("IngredientName");
+            ingredientName = value;
         }
     }
 
     public decimal Amount
     {
-        get { return _amount; }
+        get { return amount; }
         set
         {
-            _amount = value;
-            OnPropertyChanged("Amount");
+            amount = value;
         }
     }
 
     public string Unit
     {
-        get { return unit; }
+        get { return unit;}
         set
         {
             unit = value;
-            OnPropertyChanged("Unit");
         }
-    }
-    // Implement INotifyPropertyChanged
-    public event PropertyChangedEventHandler PropertyChanged;
-
-    protected void OnPropertyChanged(string propertyName)
-    {
-        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }
 }
