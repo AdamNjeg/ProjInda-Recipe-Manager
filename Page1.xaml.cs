@@ -26,5 +26,12 @@ namespace ProjInda_Recipe_Manager
             InitializeComponent();
             RecipeListbox.ItemsSource = Global.myRecipes;
         }
+
+        private void RecipeListbox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Recipe chosenRecipe = RecipeListbox.SelectedItem as Recipe;
+            titleBox.Text = chosenRecipe.Name;
+            
+        }
     }
 }

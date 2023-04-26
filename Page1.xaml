@@ -20,7 +20,8 @@
                     <DropShadowEffect Color="Black" Direction="270" BlurRadius="10" ShadowDepth="5" Opacity="0.5" />
                 </Label.Effect>
             </Label>
-            <ListBox x:Name="RecipeListbox" HorizontalAlignment="Left" Height="265" Margin="42,100,0,0" VerticalAlignment="Top" Width="153" d:ItemsSource="{d:SampleData ItemCount=5}" Background="#7F71AEDD" FontSize="16" HorizontalContentAlignment="Stretch" Grid.RowSpan="3"/>
+            <ListBox x:Name="RecipeListbox" HorizontalAlignment="Left" Height="265" Margin="42,100,0,0" VerticalAlignment="Top" Width="153" d:ItemsSource="{d:SampleData ItemCount=5}" Background="#7F71AEDD" FontSize="16" HorizontalContentAlignment="Stretch" Grid.RowSpan="3" SelectionChanged="RecipeListbox_SelectionChanged"/>
+            <TextBox x:Name="titleBox" HorizontalAlignment="Left" Height="45" Margin="544,42,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="245" IsReadOnly="True"/>
         </Grid>
     </Viewbox>
 </Page>
