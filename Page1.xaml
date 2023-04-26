@@ -20,9 +20,8 @@
                     <DropShadowEffect Color="Black" Direction="270" BlurRadius="10" ShadowDepth="5" Opacity="0.5" />
                 </Label.Effect>
             </Label>
-            <ListBox x:Name="RecipeListbox" HorizontalAlignment="Left" Height="265" Margin="42,100,0,0" VerticalAlignment="Top" Width="153" d:ItemsSource="{d:SampleData ItemCount=5}" Background="#7F71AEDD" FontSize="16" HorizontalContentAlignment="Stretch" Grid.RowSpan="3" SelectionChanged="RecipeListbox_SelectionChanged"/>
-            <TextBox x:Name="titleBox" HorizontalAlignment="Left" Height="45" Margin="544,42,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="245" IsReadOnly="True"/>
-            <Button x:Name="BackButton" FontFamily="Brush Script MT" FontSize="20" Content="Back" HorizontalAlignment="Left" Margin="42,255,0,0" VerticalAlignment="Top" Height="30" Width="78" Click="Backbtn_Click" Background="#FF97ACF2" Grid.Row="2">
+            <ListBox x:Name="RecipeListbox" HorizontalAlignment="Left" Height="265" Margin="42,87,0,0" VerticalAlignment="Top" Width="154" d:ItemsSource="{d:SampleData ItemCount=5}" Background="#7FFFFFFF" FontSize="16" HorizontalContentAlignment="Stretch" Grid.RowSpan="3" SelectionChanged="RecipeListbox_SelectionChanged" BorderBrush="#00ABADB3"/>
+            <Button x:Name="BackButton" FontFamily="Brush Script MT" FontSize="20" Content="Back" HorizontalAlignment="Left" Margin="42,252,0,0" VerticalAlignment="Top" Height="30" Width="78" Click="Backbtn_Click" Background="#FF97ACF2" Grid.Row="2">
                 <Button.Style>
                     <Style TargetType="Button">
                         <Setter Property="Background" Value="#FF97ACF2"/>
@@ -60,6 +59,38 @@
                     </Style>
                 </Button.Style>
             </Button>
+            <Label x:Name="titleBox" Content="No recipe chosen" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="340,94,340,0" VerticalAlignment="Top" Height="39" Width="177" FontFamily="Ink Free" FontSize="20" FontWeight="Bold" Foreground="#FF446D9F" Grid.RowSpan="2"/>
+            <Label x:Name="Ingredientslist" Content="Ingredients.." HorizontalAlignment="Center" Margin="0,36,0,0" Grid.Row="1" VerticalAlignment="Top" Height="194" Width="170" FontFamily="Ink Free" FontSize="16" FontWeight="Bold" Foreground="#FF446D9F" Grid.RowSpan="2" Background="#7FFFFFFF">
+                <Label.Style>
+                    <Style TargetType="Label">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="Label">
+                                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="5">
+                                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Label.Style>
+            </Label>
+            <Label x:Name="Instructions" Content="Instructions.." HorizontalAlignment="Left" Margin="580,36,0,0" Grid.Row="1" VerticalAlignment="Top" Height="194" Width="170" FontFamily="Ink Free" FontSize="16" FontWeight="Bold" Foreground="#FF446D9F" Grid.RowSpan="2" Background="#7FFFFFFF">
+                <Label.Style>
+                    <Style TargetType="Label">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="Label">
+                                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="5
+                                            ">
+                                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Label.Style>
+            </Label>
         </Grid>
     </Viewbox>
 </Page>

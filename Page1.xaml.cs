@@ -30,8 +30,15 @@ namespace ProjInda_Recipe_Manager
         private void RecipeListbox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Recipe chosenRecipe = RecipeListbox.SelectedItem as Recipe;
-            titleBox.Text = chosenRecipe.Name;
-            
+            titleBox.Content = chosenRecipe.Name;
+
+            StringBuilder ingredientsText = new StringBuilder();
+            foreach (var ingredient in chosenRecipe.Ingredients)
+            {
+                ingredientsText.AppendLine(ingredient.ToString());
+            }
+            Ingredientslist.Content = ingredientsText.ToString();
+            Instructions.Content = chosenRecipe.Instructions;
         }
         private void Backbtn_Click(object sender, RoutedEventArgs e)
         {

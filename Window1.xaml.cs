@@ -70,10 +70,5 @@ namespace ProjInda_Recipe_Manager
 
             this.Close();
         }
-
-        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
     }
 }
