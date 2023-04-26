@@ -33,5 +33,9 @@ namespace ProjInda_Recipe_Manager
             titleBox.Text = chosenRecipe.Name;
             
         }
+        private void Backbtn_Click(object sender, RoutedEventArgs e)
+        {
+            Window.GetWindow(this).Content = new startPage();
+        }
     }
 }

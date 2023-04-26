@@ -22,6 +22,44 @@
             </Label>
             <ListBox x:Name="RecipeListbox" HorizontalAlignment="Left" Height="265" Margin="42,100,0,0" VerticalAlignment="Top" Width="153" d:ItemsSource="{d:SampleData ItemCount=5}" Background="#7F71AEDD" FontSize="16" HorizontalContentAlignment="Stretch" Grid.RowSpan="3" SelectionChanged="RecipeListbox_SelectionChanged"/>
             <TextBox x:Name="titleBox" HorizontalAlignment="Left" Height="45" Margin="544,42,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="245" IsReadOnly="True"/>
+            <Button x:Name="BackButton" FontFamily="Brush Script MT" FontSize="20" Content="Back" HorizontalAlignment="Left" Margin="42,255,0,0" VerticalAlignment="Top" Height="30" Width="78" Click="Backbtn_Click" Background="#FF97ACF2" Grid.Row="2">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#FF97ACF2"/>
+                        <Setter Property="Foreground" Value="#FF2F3E7C"/>
+                        <Setter Property="BorderBrush" Value="#00000000"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="5">
+                                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+                                                            To="#FFC3D8FF" Duration="0:0:0.3"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.EnterActions>
+                                <Trigger.ExitActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+                                                            To="#FF97ACF2" Duration="0:0:0.3"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.ExitActions>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
         </Grid>
     </Viewbox>
 </Page>
