@@ -41,6 +41,8 @@ namespace ProjInda_Recipe_Manager
             this.DialogResult = false;
             this.Close();
         }
+
+      
     }
 
     
