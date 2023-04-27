@@ -29,21 +29,39 @@ namespace ProjInda_Recipe_Manager
 
         private void RecipeListbox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Recipe chosenRecipe = RecipeListbox.SelectedItem as Recipe;
-            titleBox.Content = chosenRecipe.Name;
-            Instructions.Content = chosenRecipe.Instructions;
-
-            StringBuilder ingredientsText = new StringBuilder();
-            foreach (var ingredient in chosenRecipe.Ingredients)
+            if(RecipeListbox.SelectedItem == null)
             {
-                ingredientsText.AppendLine(ingredient.ToString());
+                titleBox.Content = "No recipe chosen";
+                Instructions.Content = "Instructions..";
+                Ingredientslist.Content = "Ingredients..";
             }
-            Ingredientslist.Content = ingredientsText.ToString();
-            Instructions.Content = chosenRecipe.Instructions;
+            else
+            {
+                Recipe chosenRecipe = RecipeListbox.SelectedItem as Recipe;
+                titleBox.Content = chosenRecipe.Name;
+                Instructions.Content = chosenRecipe.Instructions;
+
+                StringBuilder ingredientsText = new StringBuilder();
+                foreach (var ingredient in chosenRecipe.Ingredients)
+                {
+                    ingredientsText.AppendLine(ingredient.ToString());
+                }
+                Ingredientslist.Content = ingredientsText.ToString();
+                Instructions.Content = chosenRecipe.Instructions;
+            }
+           
         }
         private void Backbtn_Click(object sender, RoutedEventArgs e)
         {
             Window.GetWindow(this).Content = new startPage();
+        }
+
+        private void delete_btn_Click(object sender, RoutedEventArgs e)
+        {
+            Recipe selectedRecipe = RecipeListbox.SelectedItem as Recipe;
+            Global.theRecipeManager.deleteRecipe(selectedRecipe);
+            RecipeListbox.Items.Refresh(); 
+            
         }
     }
 }

@@ -21,7 +21,7 @@ namespace ProjInda_Recipe_Manager
 
                 // Perform CRUD operations using the connection
 
-                string recipeSql = "INSERT INTO Recipes (Name, Instructions, Portion) VALUES (@recipeName, @instructions @portion)";
+                string recipeSql = "INSERT INTO Recipes (Name, Instructions, Portion) VALUES (@recipeName, @instructions, @portion)";
                 string ingredientSql = "INSERT INTO Ingredients (Name, Amount, Unit, RecipeID) VALUES (@ingredientName, @amount, @unit, @recipeID)";
                 
 
@@ -116,6 +116,36 @@ namespace ProjInda_Recipe_Manager
             }
 
             return recipes;
+        }
+        public void deleteRecipe(Recipe recipe)
+        {   
+            using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+            {
+                connection.Open();
+                // Perform CRUD operations using the connection
+                string recipeSql = "DELETE FROM Recipes WHERE RecipeId = @recipeId";
+                string ingredientSql = "DELETE FROM Ingredients WHERE RecipeId = @recipeId";
+
+                using(SQLiteCommand recipeCommand = new SQLiteCommand(recipeSql, connection))
+                {
+                    recipeCommand.Parameters.AddWithValue("@recipeId", recipe.RecipeId);
+                    recipeCommand.ExecuteNonQuery();
+                }
+                using (SQLiteCommand ingredientCommand = new SQLiteCommand(ingredientSql, connection))
+                {
+                    ingredientCommand.Parameters.AddWithValue("@recipeId", recipe.RecipeId);
+                    ingredientCommand.ExecuteNonQuery();
+                }
+                connection.Close();
+            }
+            
+            for (int i = Global.myRecipes.Count-1; i >=0; i--)
+            {
+                if (Global.myRecipes[i].RecipeId == recipe.RecipeId)
+                {
+                    Global.myRecipes.RemoveAt(i);
+                }
+            }
         }
     }
 }

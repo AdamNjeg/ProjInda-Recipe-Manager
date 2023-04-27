@@ -65,7 +65,7 @@ namespace ProjInda_Recipe_Manager
         {
             recipe.Name = recipeName_txtBox.Text;
             recipe.Instructions = instructions_textbox.Text;
-            recipe.Portions = portionscombobox.SelectedIndex;
+            recipe.Portions = (int)portionscombobox.SelectedItem;
             this.DialogResult = true;
 
             this.Close();

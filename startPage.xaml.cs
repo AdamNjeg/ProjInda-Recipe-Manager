@@ -35,7 +35,8 @@ namespace ProjInda_Recipe_Manager
                 {
                     Name = addRecipeWindow.recipe.Name,
                     Instructions = addRecipeWindow.recipe.Instructions,
-                    Ingredients = addRecipeWindow.recipe.Ingredients
+                    Ingredients = addRecipeWindow.recipe.Ingredients,
+                    Portions = addRecipeWindow.recipe.Portions
                 };
                 Global.myRecipes.Add(newRecipe);
                 Global.theRecipeManager.saveRecipe(newRecipe);
