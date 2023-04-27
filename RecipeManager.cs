@@ -12,7 +12,7 @@ namespace ProjInda_Recipe_Manager
         // Connection string for your SQLite database
         private string connectionString = @"Data Source=TheDataBase.db;Version=3;";
 
-        //Saves a recipe in the database 
+        //Saves a recipe in the database
         public void saveRecipe(Recipe newRecipe)
         {
             using (SQLiteConnection connection = new SQLiteConnection(connectionString))
@@ -38,6 +38,7 @@ namespace ProjInda_Recipe_Manager
 
                     // Get the last inserted row ID (RecipeId)
                     int recipeId = (int)connection.LastInsertRowId;
+                    newRecipe.RecipeId = recipeId;
 
                     // Create a new SQLite command for inserting Ingredient data
                     using (SQLiteCommand ingredientCommand = new SQLiteCommand(ingredientSql, connection))
@@ -58,6 +59,7 @@ namespace ProjInda_Recipe_Manager
                     }
                 }
                 connection.Close();
+                
             }
 
         }
