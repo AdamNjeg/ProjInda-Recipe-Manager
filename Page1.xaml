@@ -92,6 +92,10 @@
                 </Label.Style>
             </Label>
             <Button x:Name="delete_btn" Content="Delete recipe" HorizontalAlignment="Left" Height="44" Margin="144,244,0,0" Grid.Row="2" VerticalAlignment="Top" Width="92" Click="delete_btn_Click"/>
+            <Label Content="Portions" HorizontalAlignment="Left" Margin="347,209,0,0" Grid.Row="2" VerticalAlignment="Top" Height="29" Width="78"/>
+            <Label x:Name="portionSizeInt" Content="0" HorizontalAlignment="Left" Margin="355,240,0,0" Grid.Row="2" VerticalAlignment="Top"/>
+            <Button x:Name="plusBtn" Content="+" HorizontalAlignment="Left" Margin="388,243,0,0" Grid.Row="2" VerticalAlignment="Top" Width="18" Click="plusBtn_Click"/>
+            <Button x:Name="minusBtn" Content="-" HorizontalAlignment="Left" Margin="321,243,0,0" Grid.Row="2" VerticalAlignment="Top" Width="17" Click="minusBtn_Click"/>
         </Grid>
     </Viewbox>
 </Page>
