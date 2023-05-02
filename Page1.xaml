@@ -96,6 +96,7 @@
             <Label x:Name="portionSizeInt" Content="-" HorizontalAlignment="Left" Margin="355,240,0,0" Grid.Row="2" VerticalAlignment="Top"/>
             <Button x:Name="plusBtn" Content="+" HorizontalAlignment="Left" Margin="388,243,0,0" Grid.Row="2" VerticalAlignment="Top" Width="18" Click="plusBtn_Click"/>
             <Button x:Name="minusBtn" Content="-" HorizontalAlignment="Left" Margin="321,243,0,0" Grid.Row="2" VerticalAlignment="Top" Width="17" Click="minusBtn_Click"/>
+            <Button x:Name="editBtn" Content="Edit recipe" HorizontalAlignment="Left" Margin="577,259,0,0" Grid.Row="2" VerticalAlignment="Top" Height="24" Width="91" Click="editBtn_Click"/>
         </Grid>
     </Viewbox>
 </Page>
