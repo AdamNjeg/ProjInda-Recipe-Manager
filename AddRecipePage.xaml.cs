@@ -10,22 +10,23 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace ProjInda_Recipe_Manager
 {
     /// <summary>
-    /// Interaction logic for Window1.xaml
+    /// Interaction logic for AddRecipePage.xaml
     /// </summary>
-    public partial class Window1 : Window
+    public partial class AddRecipePage : Page
     {
-        public Recipe recipe {get; set;}
-        public static List<int> numbers = new List<int> {1, 2, 3, 4, 5, 6, 7, 8, 9};
+        public Recipe recipe { get; set; }
+        public static List<int> numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 
 
 
-        public Window1()
-        {   
+        public AddRecipePage()
+        {
             InitializeComponent();
             portionscombobox.SelectedIndex = 0;
             portionscombobox.ItemsSource = numbers;
@@ -63,12 +64,17 @@ namespace ProjInda_Recipe_Manager
 
         private void SaveRecipe_btn_Click(object sender, RoutedEventArgs e)
         {
-            recipe.Name = recipeName_txtBox.Text;
-            recipe.Instructions = instructions_textbox.Text;
-            recipe.Portions = (int)portionscombobox.SelectedItem;
-            this.DialogResult = true;
+            if (recipeName_txtBox.Text != "")
+            {
+                recipe.Name = recipeName_txtBox.Text;
+                recipe.Instructions = instructions_textbox.Text;
+                recipe.Portions = (int)portionscombobox.SelectedItem;
+                Global.myRecipes.Add(recipe);
+                Global.theRecipeManager.saveRecipe(recipe);
 
-            this.Close();
+                Window.GetWindow(this).Content = new startPage();
+            }
+            
         }
     }
 }

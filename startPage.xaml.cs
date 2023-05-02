@@ -20,7 +20,7 @@ namespace ProjInda_Recipe_Manager
     /// </summary>
     public partial class startPage : Page
     {
-        public Window1 newWindow;
+        
         public startPage()
         {
             InitializeComponent();
@@ -28,20 +28,12 @@ namespace ProjInda_Recipe_Manager
         private void TestButton_Click(object sender, RoutedEventArgs e)
         {
 
-            Window1 addRecipeWindow = new Window1();
-            if (addRecipeWindow.ShowDialog() == true)
-            {
-                Recipe newRecipe = new Recipe
-                {
-                    Name = addRecipeWindow.recipe.Name,
-                    Instructions = addRecipeWindow.recipe.Instructions,
-                    Ingredients = addRecipeWindow.recipe.Ingredients,
-                    Portions = addRecipeWindow.recipe.Portions
-                };
-                Global.myRecipes.Add(newRecipe);
-                Global.theRecipeManager.saveRecipe(newRecipe);
+            AddRecipePage addRecipePage = new AddRecipePage();
+            Window.GetWindow(this).Content = addRecipePage;
 
-            }
+
+
+
         }
 
         private void ViewRecipes_Click(object sender, RoutedEventArgs e)

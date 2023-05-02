@@ -10,5 +10,6 @@ namespace ProjInda_Recipe_Manager
     {
         public static List<Recipe> myRecipes { get; set; }
         public static RecipeManager theRecipeManager { get; set; }
+
     }
 }
