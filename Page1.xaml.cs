@@ -57,10 +57,13 @@ namespace ProjInda_Recipe_Manager
         }
 
         private void delete_btn_Click(object sender, RoutedEventArgs e)
-        {
-            Recipe selectedRecipe = RecipeListbox.SelectedItem as Recipe;
-            Global.theRecipeManager.deleteRecipe(selectedRecipe);
-            RecipeListbox.Items.Refresh(); 
+        {   
+            if (RecipeListbox.SelectedItem != null) {
+                Recipe selectedRecipe = RecipeListbox.SelectedItem as Recipe;
+                Global.theRecipeManager.deleteRecipe(selectedRecipe);
+                RecipeListbox.Items.Refresh();
+            }
+           
             
         }
     }
