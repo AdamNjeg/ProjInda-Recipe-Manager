@@ -60,8 +60,17 @@ namespace ProjInda_Recipe_Manager
         {   
             if (RecipeListbox.SelectedItem != null) {
                 Recipe selectedRecipe = RecipeListbox.SelectedItem as Recipe;
-                Global.theRecipeManager.deleteRecipe(selectedRecipe);
-                RecipeListbox.Items.Refresh();
+                if (MessageBox.Show("Are you sure you want to delete " + selectedRecipe.Name + "? This action cannot be undone.", "Question", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.No)
+                {
+                    //do no stuff
+                }
+                else
+                {
+                    
+                    Global.theRecipeManager.deleteRecipe(selectedRecipe);
+                    RecipeListbox.Items.Refresh();
+                }
+                
             }
            
             
