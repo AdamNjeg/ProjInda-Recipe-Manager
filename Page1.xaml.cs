@@ -82,21 +82,9 @@ namespace ProjInda_Recipe_Manager
 
         private void plusBtn_Click(object sender, RoutedEventArgs e)
         {
-            portionSizeInt.Content = (int)portionSizeInt.Content + 1;
-            Recipe chosenRecipe = RecipeListbox.SelectedItem as Recipe;
-            StringBuilder ingredientsText = new StringBuilder();
-            foreach (var ingredient in chosenRecipe.Ingredients)
+            if(RecipeListbox.SelectedItem != null)
             {
-                ingredientsText.AppendLine(ingredient.IngredientName + " - " + (ingredient.Amount / chosenRecipe.Portions) * (int)portionSizeInt.Content + " " + ingredient.Unit);
-            }
-            Ingredientslist.Content = ingredientsText.ToString();
-        }
-
-        private void minusBtn_Click(object sender, RoutedEventArgs e)
-        {   
-            if((int)portionSizeInt.Content > 1)
-            {
-                portionSizeInt.Content = (int)portionSizeInt.Content - 1;
+                portionSizeInt.Content = (int)portionSizeInt.Content + 1;
                 Recipe chosenRecipe = RecipeListbox.SelectedItem as Recipe;
                 StringBuilder ingredientsText = new StringBuilder();
                 foreach (var ingredient in chosenRecipe.Ingredients)
@@ -105,8 +93,28 @@ namespace ProjInda_Recipe_Manager
                 }
                 Ingredientslist.Content = ingredientsText.ToString();
             }
-
             
+        }
+
+        private void minusBtn_Click(object sender, RoutedEventArgs e)
+        {   
+            if(RecipeListbox.SelectedItem != null)
+            {
+                if ((int)portionSizeInt.Content > 1)
+                {
+                    portionSizeInt.Content = (int)portionSizeInt.Content - 1;
+                    Recipe chosenRecipe = RecipeListbox.SelectedItem as Recipe;
+                    StringBuilder ingredientsText = new StringBuilder();
+                    foreach (var ingredient in chosenRecipe.Ingredients)
+                    {
+                        ingredientsText.AppendLine(ingredient.IngredientName + " - " + (ingredient.Amount / chosenRecipe.Portions) * (int)portionSizeInt.Content + " " + ingredient.Unit);
+                    }
+                    Ingredientslist.Content = ingredientsText.ToString();
+                }
+
+            }
+
+
 
         }
     }
