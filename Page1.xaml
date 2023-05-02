@@ -20,7 +20,7 @@
                     <DropShadowEffect Color="Black" Direction="270" BlurRadius="10" ShadowDepth="5" Opacity="0.5" />
                 </Label.Effect>
             </Label>
-            <ListBox x:Name="RecipeListbox" HorizontalAlignment="Left" Height="265" Margin="42,87,0,0" VerticalAlignment="Top" Width="154" d:ItemsSource="{d:SampleData ItemCount=5}" Background="#7FFFFFFF" FontSize="16" HorizontalContentAlignment="Stretch" Grid.RowSpan="3" SelectionChanged="RecipeListbox_SelectionChanged" BorderBrush="#00ABADB3"/>
+            <ListBox x:Name="RecipeListbox" HorizontalAlignment="Left" Height="265" Margin="24,88,0,0" VerticalAlignment="Top" Width="154" d:ItemsSource="{d:SampleData ItemCount=5}" Background="#7FFFFFFF" FontSize="16" HorizontalContentAlignment="Stretch" Grid.RowSpan="3" SelectionChanged="RecipeListbox_SelectionChanged" BorderBrush="#00ABADB3"/>
             <Button x:Name="BackButton" FontFamily="Brush Script MT" FontSize="20" Content="Back" HorizontalAlignment="Left" Margin="41,255,0,0" VerticalAlignment="Top" Height="30" Width="78" Click="Backbtn_Click" Background="#FF97ACF2" Grid.Row="2">
                 <Button.Style>
                     <Style TargetType="Button">
@@ -60,7 +60,7 @@
                 </Button.Style>
             </Button>
             <Label x:Name="titleBox" Content="No recipe chosen" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="340,94,340,0" VerticalAlignment="Top" Height="39" Width="177" FontFamily="Ink Free" FontSize="20" FontWeight="Bold" Foreground="#FF446D9F" Grid.RowSpan="2"/>
-            <Label x:Name="Ingredientslist" Content="Ingredients.." HorizontalAlignment="Center" Margin="0,36,0,0" Grid.Row="1" VerticalAlignment="Top" Height="194" Width="170" FontFamily="Ink Free" FontSize="16" FontWeight="Bold" Foreground="#FF446D9F" Grid.RowSpan="2" Background="#7FFFFFFF">
+            <Label x:Name="Ingredientslist" Content="Ingredients.." HorizontalAlignment="Left" Margin="190,1,0,0" Grid.Row="2" VerticalAlignment="Top" Height="214" Width="339" FontFamily="Ink Free" FontSize="16" FontWeight="Bold" Foreground="#FF446D9F" Background="#7FFFFFFF">
                 <Label.Style>
                     <Style TargetType="Label">
                         <Setter Property="Template">
@@ -75,15 +75,16 @@
                     </Style>
                 </Label.Style>
             </Label>
-            <Label x:Name="Instructions" Content="Instructions.." HorizontalAlignment="Left" Margin="580,36,0,0" Grid.Row="1" VerticalAlignment="Top" Height="194" Width="170" FontFamily="Ink Free" FontSize="16" FontWeight="Bold" Foreground="#FF446D9F" Grid.RowSpan="2" Background="#7FFFFFFF">
+            <Label x:Name="Instructions" Content="Instructions.." HorizontalAlignment="Left" Margin="540,4,0,0" Grid.Row="1" VerticalAlignment="Top" Height="277" Width="295" FontFamily="Ink Free" FontSize="16" FontWeight="Bold" Foreground="#FF446D9F" Background="#7FFFFFFF" Grid.RowSpan="2">
                 <Label.Style>
                     <Style TargetType="Label">
                         <Setter Property="Template">
                             <Setter.Value>
                                 <ControlTemplate TargetType="Label">
-                                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="5
-                                            ">
-                                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="5">
+                                        <ScrollViewer VerticalScrollBarVisibility="Auto">
+                                            <TextBlock Text="{TemplateBinding Content}" TextWrapping="Wrap" Margin="5"/>
+                                        </ScrollViewer>
                                     </Border>
                                 </ControlTemplate>
                             </Setter.Value>
@@ -91,12 +92,13 @@
                     </Style>
                 </Label.Style>
             </Label>
+
             <Button x:Name="delete_btn" Content="Delete recipe" HorizontalAlignment="Left" Height="44" Margin="144,244,0,0" Grid.Row="2" VerticalAlignment="Top" Width="92" Click="delete_btn_Click"/>
-            <Label Content="Portions" HorizontalAlignment="Left" Margin="347,209,0,0" Grid.Row="2" VerticalAlignment="Top" Height="29" Width="78"/>
+            <Label Content="Portions" HorizontalAlignment="Left" Margin="333,222,0,0" Grid.Row="2" VerticalAlignment="Top" Height="29" Width="78"/>
             <Label x:Name="portionSizeInt" Content="-" HorizontalAlignment="Left" Margin="355,240,0,0" Grid.Row="2" VerticalAlignment="Top"/>
             <Button x:Name="plusBtn" Content="+" HorizontalAlignment="Left" Margin="388,243,0,0" Grid.Row="2" VerticalAlignment="Top" Width="18" Click="plusBtn_Click"/>
             <Button x:Name="minusBtn" Content="-" HorizontalAlignment="Left" Margin="321,243,0,0" Grid.Row="2" VerticalAlignment="Top" Width="17" Click="minusBtn_Click"/>
-            <Button x:Name="editBtn" Content="Edit recipe" HorizontalAlignment="Left" Margin="577,259,0,0" Grid.Row="2" VerticalAlignment="Top" Height="24" Width="91" Click="editBtn_Click"/>
+            <Button x:Name="editBtn" Content="Edit recipe" HorizontalAlignment="Left" Margin="569,257,0,0" Grid.Row="2" VerticalAlignment="Top" Height="24" Width="91" Click="editBtn_Click"/>
         </Grid>
     </Viewbox>
 </Page>

@@ -41,6 +41,15 @@ namespace ProjInda_Recipe_Manager
             Page1 viewrecipe = new Page1();
             Window.GetWindow(this).Content = viewrecipe;
         }
+
+     
+        private void downloadPagebtn_Click_1(object sender, RoutedEventArgs e)
+        {
+            string Url = URL_textbox.Text;
+            RecipeDownloader.RecipeDownload(Url);
+            URL_textbox.Text= "";
+
+        }
     }
 }
 
