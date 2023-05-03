@@ -14,7 +14,7 @@ namespace ProjInda_Recipe_Manager
     public static class RecipeDownloader
     {
 
-        public static void RecipeDownload(string url)
+        public static void RecipeDownloadICA(string url)
         {
             Recipe newRecipe = new Recipe();
             
