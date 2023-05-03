@@ -59,7 +59,7 @@
                     </Style>
                 </Button.Style>
             </Button>
-            <Label x:Name="titleBox" Content="No recipe chosen" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="340,94,340,0" VerticalAlignment="Top" Height="39" Width="177" FontFamily="Ink Free" FontSize="20" FontWeight="Bold" Foreground="#FF446D9F" Grid.RowSpan="2"/>
+            <Label x:Name="titleBox" Content="No recipe chosen" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="189,94,340,0" VerticalAlignment="Top" Height="39" FontFamily="Ink Free" FontSize="20" FontWeight="Bold" Foreground="#FF446D9F" Grid.RowSpan="2"/>
             <Label x:Name="Ingredientslist" Content="Ingredients.." HorizontalAlignment="Left" Margin="190,1,0,0" Grid.Row="2" VerticalAlignment="Top" Height="214" Width="339" FontFamily="Ink Free" FontSize="16" FontWeight="Bold" Foreground="#FF446D9F" Background="#7FFFFFFF">
                 <Label.Style>
                     <Style TargetType="Label">
@@ -67,7 +67,9 @@
                             <Setter.Value>
                                 <ControlTemplate TargetType="Label">
                                     <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="5">
-                                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                        <ScrollViewer VerticalScrollBarVisibility="Auto">
+                                            <TextBlock Text="{TemplateBinding Content}" TextWrapping="Wrap" Margin="5"/>
+                                        </ScrollViewer>
                                     </Border>
                                 </ControlTemplate>
                             </Setter.Value>
