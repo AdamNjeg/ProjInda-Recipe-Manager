@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,10 +21,12 @@ namespace ProjInda_Recipe_Manager
     /// </summary>
     public partial class startPage : Page
     {
-        
+        public static List<string> sites = new List<string> {"-", "ICA"};
+
         public startPage()
         {
             InitializeComponent();
+            pickSite.ItemsSource = sites;
         }
         private void TestButton_Click(object sender, RoutedEventArgs e)
         {
@@ -40,6 +43,19 @@ namespace ProjInda_Recipe_Manager
         {
             Page1 viewrecipe = new Page1();
             Window.GetWindow(this).Content = viewrecipe;
+        }
+
+     
+        private void downloadPagebtn_Click_1(object sender, RoutedEventArgs e)
+        {
+            if((string)pickSite.SelectedItem == "ICA")
+            {
+                string Url = URL_textbox.Text;
+                RecipeDownloader.RecipeDownloadICA(Url);
+                URL_textbox.Text = "";
+
+            }
+
         }
     }
 }

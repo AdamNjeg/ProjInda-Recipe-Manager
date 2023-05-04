@@ -119,10 +119,10 @@ namespace ProjInda_Recipe_Manager
         }
 
         private void editBtn_Click(object sender, RoutedEventArgs e)
-        {
-            Global.recipeToBeEdited = RecipeListbox.SelectedItem as Recipe;
-            if(RecipeListbox.SelectedItem != null)
+        {   
+            if (RecipeListbox.SelectedItem != null)
             {
+                Global.recipeToBeEdited = RecipeListbox.SelectedItem as Recipe;
                 Window.GetWindow(this).Content = new EditRecipePage();
             }
             
