@@ -5,19 +5,93 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjInda_Recipe_Manager"
         mc:Ignorable="d"
-        Title="Add Ingredient" Height="246" Width="400">
+        Title="Add Ingredient" Height="331" Width="532">
     <Viewbox Stretch="Fill">
         <Grid Background="#FFCAD3F1" Width="858">
-            <Image Source="/Images/iStock-1155240408.jpg" Opacity="0.2" Margin="0,-46,0,-64" HorizontalAlignment="Center" Width="862" Grid.RowSpan="3"/>
-            <Label x:Name="Ingredient_name" Margin="309,59,309,474" FontSize="30" FontFamily="Ink Free">Ingredient Name:</Label>
-            <TextBox x:Name="txtName" Margin="201,120,206,403" />
-            <Label x:Name="Ingredient_amount" Margin="296,204,296,333" FontSize="30" FontFamily="Ink Free">Ingredient Amount:</Label>
-            <TextBox x:Name="txtAmount" Margin="204,263,204,265" />
-            <Label Margin="396,341,396,199" FontSize="30" FontFamily="Ink Free">Unit</Label>
-            <TextBox x:Name="txtUnit" Margin="380,393,381,149"/>
+            <Image Source="/Images/iStock-1155240408.jpg" Opacity="0.2" Margin="0,-193,0,-152" HorizontalAlignment="Center" Width="1036" Height="NaN"/>
+            <Label x:Name="Ingredient_name" Margin="265,60,264,474" FontSize="40" FontFamily="Ink Free" Width="NaN">Ingredient Name:</Label>
+            <TextBox x:Name="txtName" Margin="201,126,206,403" Height="NaN" FontSize="36" />
+            <Label x:Name="Ingredient_amount" Margin="280,265,432,272" FontSize="40" FontFamily="Ink Free" Width="NaN">Amount:</Label>
+            <TextBox x:Name="txtAmount" Margin="280,333,432,196" Width="NaN" FontSize="36" />
+            <Label Margin="469,266,301,274" FontSize="40" FontFamily="Ink Free" Width="NaN" Content="Unit:"/>
+            <TextBox x:Name="txtUnit" Margin="469,332,292,196" Height="NaN" FontSize="36"/>
 
-            <Button x:Name="btnOK" Content="OK" Click="btnOK_Click" Margin="354,486,432,50" />
-            <Button x:Name="btnCancel" Content="Cancel" Click="btnCancel_Click" Margin="435,486,355,50" />
+            <Button x:Name="btnOK" Content="OK" Click="btnOK_Click" Margin="313,486,442,50" FontFamily="Brush Script MT" FontSize="30" >
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#FF97ACF2"/>
+                        <Setter Property="Foreground" Value="#FF2F3E7C"/>
+                        <Setter Property="BorderBrush" Value="#00000000"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="5">
+                                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+															To="#FFC3D8FF" Duration="0:0:0.3"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.EnterActions>
+                                <Trigger.ExitActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+															To="#FF97ACF2" Duration="0:0:0.3"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.ExitActions>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+            <Button x:Name="btnCancel" Content="Cancel" Click="btnCancel_Click" Margin="435,486,313,50" FontFamily="Brush Script MT" FontSize="30" >
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#FF97ACF2"/>
+                        <Setter Property="Foreground" Value="#FF2F3E7C"/>
+                        <Setter Property="BorderBrush" Value="#00000000"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="5">
+                                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+															To="#FFC3D8FF" Duration="0:0:0.3"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.EnterActions>
+                                <Trigger.ExitActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+															To="#FF97ACF2" Duration="0:0:0.3"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.ExitActions>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
         </Grid>
     </Viewbox>
 </Window>
