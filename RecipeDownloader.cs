@@ -14,33 +14,7 @@ namespace ProjInda_Recipe_Manager
     public static class RecipeDownloader
     {   
         
-        public static void RecipeDownloadKoket_se(string url)
-        {
-            Recipe newRecipe = new Recipe();
-
-
-            System.Net.WebClient wc = new System.Net.WebClient();
-            byte[] raw = wc.DownloadData(url);
-
-
-            string webData = Encoding.UTF8.GetString(raw);
-
-            var htmlDoc = new HtmlDocument();
-            htmlDoc.LoadHtml(webData);
-
-            //Get the name of the recipe
-            var h1Node = htmlDoc.DocumentNode.SelectSingleNode("//h1");
-            if (h1Node != null)
-            {
-                string h1Text = h1Node.InnerText.Trim();
-                newRecipe.Name = h1Text;
-            }
-            //Get instructions
-
-
-
-
-        }
+        
         public static void RecipeDownloadICA(string url)
         {
             Recipe newRecipe = new Recipe();
