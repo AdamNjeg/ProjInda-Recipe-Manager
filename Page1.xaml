@@ -20,8 +20,8 @@
                     <DropShadowEffect Color="Black" Direction="270" BlurRadius="10" ShadowDepth="5" Opacity="0.5" />
                 </Label.Effect>
             </Label>
-            <ListBox x:Name="RecipeListbox" HorizontalAlignment="Left" Height="265" Margin="24,88,0,0" VerticalAlignment="Top" Width="154" d:ItemsSource="{d:SampleData ItemCount=5}" Background="#7FFFFFFF" FontSize="16" HorizontalContentAlignment="Stretch" Grid.RowSpan="3" SelectionChanged="RecipeListbox_SelectionChanged" BorderBrush="#00ABADB3"/>
-            <Button x:Name="BackButton" FontFamily="Brush Script MT" FontSize="20" Content="Back" HorizontalAlignment="Left" Margin="41,255,0,0" VerticalAlignment="Top" Height="30" Width="78" Click="Backbtn_Click" Background="#FF97ACF2" Grid.Row="2">
+            <ListBox x:Name="RecipeListbox" HorizontalAlignment="Left" Height="265" Margin="24,88,0,0" VerticalAlignment="Top" Width="154" d:ItemsSource="{d:SampleData ItemCount=5}" Background="#7FFFFFFF" FontSize="16" HorizontalContentAlignment="Stretch" Grid.RowSpan="3" SelectionChanged="RecipeListbox_SelectionChanged" BorderBrush="#00ABADB3" FontFamily="Ink Free" FontWeight="Bold" Foreground="#FF446D9F"/>
+            <Button x:Name="BackButton" FontFamily="Brush Script MT" FontSize="20" Content="Back" HorizontalAlignment="Left" Margin="757,292,0,0" VerticalAlignment="Top" Height="30" Width="78" Click="Backbtn_Click" Background="#FF97ACF2" Grid.Row="2">
                 <Button.Style>
                     <Style TargetType="Button">
                         <Setter Property="Background" Value="#FF97ACF2"/>
@@ -59,7 +59,7 @@
                     </Style>
                 </Button.Style>
             </Button>
-            <Label x:Name="titleBox" Content="No recipe chosen" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="189,94,340,0" VerticalAlignment="Top" Height="39" FontFamily="Ink Free" FontSize="20" FontWeight="Bold" Foreground="#FF446D9F" Grid.RowSpan="2"/>
+            <Label x:Name="titleBox" Content="No recipe chosen" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="189,94,498,0" VerticalAlignment="Top" Height="39" FontFamily="Ink Free" FontSize="20" FontWeight="Bold" Foreground="#FF446D9F" Grid.RowSpan="2"/>
             <Label x:Name="Ingredientslist" Content="Ingredients.." HorizontalAlignment="Left" Margin="190,1,0,0" Grid.Row="2" VerticalAlignment="Top" Height="214" Width="339" FontFamily="Ink Free" FontSize="16" FontWeight="Bold" Foreground="#FF446D9F" Background="#7FFFFFFF">
                 <Label.Style>
                     <Style TargetType="Label">
@@ -95,12 +95,160 @@
                 </Label.Style>
             </Label>
 
-            <Button x:Name="delete_btn" Content="Delete recipe" HorizontalAlignment="Left" Height="44" Margin="144,244,0,0" Grid.Row="2" VerticalAlignment="Top" Width="92" Click="delete_btn_Click"/>
-            <Label Content="Portions" HorizontalAlignment="Left" Margin="333,222,0,0" Grid.Row="2" VerticalAlignment="Top" Height="29" Width="78"/>
-            <Label x:Name="portionSizeInt" Content="-" HorizontalAlignment="Left" Margin="355,240,0,0" Grid.Row="2" VerticalAlignment="Top"/>
-            <Button x:Name="plusBtn" Content="+" HorizontalAlignment="Left" Margin="388,243,0,0" Grid.Row="2" VerticalAlignment="Top" Width="18" Click="plusBtn_Click"/>
-            <Button x:Name="minusBtn" Content="-" HorizontalAlignment="Left" Margin="321,243,0,0" Grid.Row="2" VerticalAlignment="Top" Width="17" Click="minusBtn_Click"/>
-            <Button x:Name="editBtn" Content="Edit recipe" HorizontalAlignment="Left" Margin="569,257,0,0" Grid.Row="2" VerticalAlignment="Top" Height="24" Width="91" Click="editBtn_Click"/>
+            <Button x:Name="delete_btn" Content="Delete recipe" HorizontalAlignment="Left" Height="33" Margin="24,226,0,0" Grid.Row="2" VerticalAlignment="Top" Width="86" Click="delete_btn_Click" FontFamily="Brush Script MT" FontSize="18">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#FF97ACF2"/>
+                        <Setter Property="Foreground" Value="#FF2F3E7C"/>
+                        <Setter Property="BorderBrush" Value="#00000000"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="5">
+                                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+															To="#FFC3D8FF" Duration="0:0:0.3"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.EnterActions>
+                                <Trigger.ExitActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+															To="#FF97ACF2" Duration="0:0:0.3"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.ExitActions>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+            <Label Content="Portions" HorizontalContentAlignment="Right" Margin="196,223,600,0" Grid.Row="2" VerticalAlignment="Top" Height="26" FontFamily="Ink Free" FontWeight="Bold" FontSize="14" Foreground="#FF446D9F"/>
+            <Label x:Name="portionSizeInt" Content="-" HorizontalContentAlignment="Center" Margin="211,245,615,0" Grid.Row="2" VerticalAlignment="Top" Height="23" FontFamily="Ink Free" Foreground="#FF446D9F"/>
+            <Button x:Name="plusBtn" Content="+" HorizontalAlignment="Left" Margin="248,248,0,0" Grid.Row="2" VerticalAlignment="Top" Width="21" Click="plusBtn_Click" Height="21" RenderTransformOrigin="0.23,-0.157" FontFamily="Ink free" FontWeight="Bold">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#FF97ACF2"/>
+                        <Setter Property="Foreground" Value="#FF2F3E7C"/>
+                        <Setter Property="BorderBrush" Value="#00000000"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="5">
+                                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+															To="#FFC3D8FF" Duration="0:0:0.3"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.EnterActions>
+                                <Trigger.ExitActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+															To="#FF97ACF2" Duration="0:0:0.3"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.ExitActions>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+            <Button x:Name="minusBtn" Content="-" HorizontalAlignment="Left" Margin="183,248,0,0" Grid.Row="2" VerticalAlignment="Top" Width="23" Click="minusBtn_Click" RenderTransformOrigin="-0.838,1.35" Height="21" FontFamily="Ink Free" FontWeight="Bold">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#FF97ACF2"/>
+                        <Setter Property="Foreground" Value="#FF2F3E7C"/>
+                        <Setter Property="BorderBrush" Value="#00000000"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="5">
+                                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+															To="#FFC3D8FF" Duration="0:0:0.3"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.EnterActions>
+                                <Trigger.ExitActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+															To="#FF97ACF2" Duration="0:0:0.3"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.ExitActions>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+            <Button x:Name="editBtn" Content="Edit recipe" HorizontalAlignment="Left" Margin="569,257,0,0" Grid.Row="2" VerticalAlignment="Top" Height="24" Width="91" Click="editBtn_Click" FontFamily="Brush Script MT" FontSize="16">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#FF97ACF2"/>
+                        <Setter Property="Foreground" Value="#FF2F3E7C"/>
+                        <Setter Property="BorderBrush" Value="#00000000"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="5">
+                                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+															To="#FFC3D8FF" Duration="0:0:0.3"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.EnterActions>
+                                <Trigger.ExitActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+															To="#FF97ACF2" Duration="0:0:0.3"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.ExitActions>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
         </Grid>
     </Viewbox>
 </Page>
