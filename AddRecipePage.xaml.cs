@@ -76,5 +76,10 @@ namespace ProjInda_Recipe_Manager
             }
             
         }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            Window.GetWindow(this).Content = new startPage();
+        }
     }
 }
