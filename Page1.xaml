@@ -133,8 +133,8 @@
                     </Style>
                 </Button.Style>
             </Button>
-            <Label Content="Portions" HorizontalContentAlignment="Right" Margin="196,223,600,0" Grid.Row="2" VerticalAlignment="Top" Height="26" FontFamily="Ink Free" FontWeight="Bold" FontSize="14" Foreground="#FF446D9F"/>
-            <Label x:Name="portionSizeInt" Content="-" HorizontalContentAlignment="Center" Margin="227,72,599,0" Grid.Row="2" VerticalAlignment="Top" Height="23" FontFamily="Ink Free" Foreground="#FF446D9F"/>
+            <Label Content="Portions" HorizontalContentAlignment="Right" Margin="213,42,583,0" Grid.Row="2" VerticalAlignment="Top" Height="26" FontFamily="Ink Free" FontWeight="Bold" FontSize="14" Foreground="#FF446D9F"/>
+            <Label x:Name="portionSizeInt" Content="-" HorizontalContentAlignment="Center" Margin="227,66,599,0" Grid.Row="2" VerticalAlignment="Top" Height="29" FontFamily="Ink Free" Foreground="#FF446D9F" FontWeight="Bold" FontSize="14"/>
             <Button x:Name="plusBtn" Content="+" HorizontalAlignment="Left" Margin="267,70,0,0" Grid.Row="2" VerticalAlignment="Top" Width="21" Click="plusBtn_Click" Height="21" RenderTransformOrigin="0.23,-0.157" FontFamily="Ink free" FontWeight="Bold">
                 <Button.Style>
                     <Style TargetType="Button">
