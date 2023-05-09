@@ -21,7 +21,13 @@
             <Label Content="Ingredients" HorizontalAlignment="Left" Margin="36,107,0,0" VerticalAlignment="Top" FontFamily="Brush Script MT" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="#FF446D9F"/>
             <ListBox x:Name="IngredientsList" HorizontalAlignment="Left" Height="225" Margin="36,138,0,0" VerticalAlignment="Top" Width="148" d:ItemsSource="{d:SampleData ItemCount=5}" Opacity="1.0" FontFamily="Ink Free" Foreground="#FF446D9F" FontWeight="Bold" Background="#99FFFFFF"/>
             <Label Content="Instructions" HorizontalAlignment="Left" Margin="309,102,0,0" VerticalAlignment="Top" Width="90" Height="35" FontFamily="Brush Script MT" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="#FF446D9F"/>
-            <TextBox x:Name="instructions_textbox" TextWrapping="Wrap" Margin="309,137,291,35" Opacity="1.0" FontFamily="Ink Free" Foreground="#FF446D9F" FontWeight="Bold" Background="#99FFFFFF" AcceptsReturn="True" AcceptsTab="True"/>
+            
+             <TextBox x:Name="instructions_textbox" TextWrapping="Wrap" 
+             Opacity="1.0" FontFamily="Ink Free" Margin="309,137,291,35"
+             Foreground="#FF446D9F" FontWeight="Bold" 
+             Background="#99FFFFFF" AcceptsReturn="True" 
+             AcceptsTab="True" Height="200" Width="241" VerticalScrollBarVisibility="Auto"/>
+            
             <Button x:Name="btnAddIngredient" Content="Add" HorizontalAlignment="Left" Margin="36,368,0,0" VerticalAlignment="Top" Width="53" Click="btnAddIngredient_Click" FontFamily="Brush Script MT" FontSize="18" Height="28" Grid.RowSpan="2">
                 <Button.Style>
                     <Style TargetType="Button">
