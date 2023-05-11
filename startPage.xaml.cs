@@ -51,7 +51,17 @@ namespace ProjInda_Recipe_Manager
             if((string)pickSite.SelectedItem == "ICA")
             {
                 string Url = URL_textbox.Text;
-                RecipeDownloader.RecipeDownloadICA(Url);
+                try
+                {
+                    RecipeDownloader.RecipeDownloadICA(Url);
+                }
+                catch (Exception)
+                {
+
+                    MessageBox.Show("Something went wrong with the download, please try a different URL");
+                }
+                
+                
                 URL_textbox.Text = "";
 
             }

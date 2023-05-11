@@ -9,7 +9,7 @@
       Title="startPage">
 
     <Viewbox Stretch="Fill">
-        <Grid Background="#FFCAD3F1" Width="858">
+        <Grid Background="#FFCAD3F1" Width="858" Height="464.666666666667">
             <Grid.RowDefinitions>
                 <RowDefinition Height="0*"/>
                 <RowDefinition/>
@@ -75,7 +75,7 @@
                 </Label.Triggers>
             </Label>
             <Label Content="Your favourite but pretty shitty Recipe Manager" FontFamily="Ink Free" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#FF446D9F" Margin="0,44,0,0" Grid.Row="2"/>
-            <Button x:Name="ViewRecipebtn" FontFamily="Brush Script MT" FontSize="16" Content="View your recipes" HorizontalAlignment="Left" Margin="49,0,0,0" VerticalAlignment="Top" Height="44" Width="117" Click="ViewRecipes_Click" Background="#FF97ACF2" Grid.Row="1">
+            <Button x:Name="ViewRecipebtn" FontFamily="Brush Script MT" FontSize="16" Content="View your recipes" HorizontalAlignment="Left" Margin="46,77,0,0" VerticalAlignment="Top" Height="44" Width="117" Click="ViewRecipes_Click" Background="#FF97ACF2" Grid.Row="1">
                 <Button.Style>
                     <Style TargetType="Button">
                         <Setter Property="Background" Value="#FF97ACF2"/>
